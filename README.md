@@ -86,3 +86,7 @@ Install the vim settings.
 After installing the vim settings, you may also need to install vim.
 
 You can set the terminal theme using zplug. Simply change the `# Load theme file` section in `~/.zsh`.
+
+
+## References
+Install format based off by https://github.com/xero/dotfiles
