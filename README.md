@@ -42,13 +42,6 @@ Navigate to your home directory.
 
 `cd ~`
 
-Backup your existing .zshrc and .vimrc files if any.
-
-`mv .zshrc .zshrc.backup`
-`mv .zsh/ .zsh.backup/`
-`mv .vimrc .vimrc.backup`
-`mv .vim .vim.backup`
-
 Clone the repo:
 
 `git clone https://github.com/calebkiage/dotfiles.git`
@@ -58,9 +51,10 @@ Enter the dotfiles directory.
 `cd dotfiles`
 
 Backup your existing .zshrc files if any.
-
-`mv ~/.zshrc ~/.zshrc.backup`
-`mv ~/.zsh/ ~/.zsh.backup/`
+```
+mv ~/.zshrc ~/.zshrc.backup
+mv ~/.zsh/ ~/.zsh.backup/
+```
 
 Install the zsh settings.
 
@@ -75,9 +69,10 @@ After installing the zsh settings, you may need to change your login shell
 `chsh -s /bin/zsh`
 
 Backup your existing .vimrc files if any.
-
-`mv ~/.vimrc ~/.vimrc.backup`
-`mv ~/.vim ~/.vim.backup`
+```
+mv ~/.vimrc ~/.vimrc.backup
+mv ~/.vim ~/.vim.backup
+```
 
 Install the vim settings.
 
