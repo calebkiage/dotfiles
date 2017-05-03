@@ -30,14 +30,24 @@ To install the zsh config, use the command:
 
 This will symlink files to `~/.zsh` and `~` but you can override the default behavior and symlink files to another location with the `-t` (target) argument flag.
 
-You may need to install zsh in your computer.
-
 **note:** stow can only create a symlink if a config file does not already exist. if a default file was created upon program installation you must delete it first before you can install a new one with stow. this does not apply to directories, only files.
 
 # tldr
+
+Ensure you have installed `stow`.
+
+Install either `zsh` or `vim` or both.
+
 Navigate to your home directory.
 
 `cd ~`
+
+Backup your existing .zshrc and .vimrc files if any.
+
+`mv .zshrc .zshrc.backup`
+`mv .zsh/ .zsh.backup/`
+`mv .vimrc .vimrc.backup`
+`mv .vim .vim.backup`
 
 Clone the repo:
 
@@ -46,6 +56,11 @@ Clone the repo:
 Enter the dotfiles directory.
 
 `cd dotfiles`
+
+Backup your existing .zshrc files if any.
+
+`mv ~/.zshrc ~/.zshrc.backup`
+`mv ~/.zsh/ ~/.zsh.backup/`
 
 Install the zsh settings.
 
@@ -58,6 +73,11 @@ Install zsh settings for the root user if you so desire.
 After installing the zsh settings, you may need to change your login shell
 
 `chsh -s /bin/zsh`
+
+Backup your existing .vimrc files if any.
+
+`mv ~/.vimrc ~/.vimrc.backup`
+`mv ~/.vim ~/.vim.backup`
 
 Install the vim settings.
 
