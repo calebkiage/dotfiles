@@ -20,11 +20,20 @@ zplug "plugins/archlinux", from:oh-my-zsh
 zplug "plugins/systemd", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
 
+# Needed by pure theme
+zplug mafredri/zsh-async, from:github
+
+# Load completion library for those sweet [tab] squares
+#zplug "lib/completion", from:oh-my-zsh
+
 # A zsh plugin to help remembering those aliases you defined once
 zplug "djui/alias-tips"
 
 # Updated fork of oh-my-zsh gitfast plugin.
 zplug "tevren/gitfast-zsh-plugin"
+
+# Gradle tab completion for bash and zsh
+#zplug "gradle/gradle-completion"
 
 # Better completion for npm
 zplug "lukechilds/zsh-better-npm-completion"
@@ -45,8 +54,9 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Load theme file
 #zplug "agnoster/agnoster-zsh-theme", as:theme, use:agnoster.zsh-theme
 #zplug "bhilburn/powerlevel9k", as:theme, use:powerlevel9k.zsh-theme
-zplug "denysdovhan/spaceship-zsh-theme", as:theme, defer:2
+#zplug "denysdovhan/spaceship-zsh-theme", as:theme, defer:2
 #zplug "themes/blinks", as:theme, from:oh-my-zsh
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 
 # Install packages that have not been installed yet
 if ! zplug check --verbose; then
@@ -78,6 +88,12 @@ if zplug check "bhilburn/powerlevel9k"; then
     POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
     POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 fi
+
+if zplug check "sindresorhus/pure"; then
+    PURE_GIT_PULL=0
+    PURE_GIT_UNTRACKED_DIRTY=0
+fi
+
 if zplug check "denysdovhan/spaceship-zsh-theme"; then
     # PROMPT
     SPACESHIP_PROMPT_SYMBOL='$ '
