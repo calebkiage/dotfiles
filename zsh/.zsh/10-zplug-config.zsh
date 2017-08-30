@@ -17,13 +17,8 @@ zplug "zsh-users/zsh-history-substring-search"
 # Load oh-my-zsh plugins
 zplug "plugins/archlinux", from:oh-my-zsh
 
-# Add completions for docker.
-zplug "plugins/docker", from:oh-my-zsh
 zplug "plugins/systemd", from:oh-my-zsh
 zplug "plugins/vi-mode", from:oh-my-zsh
-
-# Load completion library for those sweet [tab] squares
-zplug "lib/completion", from:oh-my-zsh
 
 # A zsh plugin to help remembering those aliases you defined once
 zplug "djui/alias-tips"
@@ -31,17 +26,15 @@ zplug "djui/alias-tips"
 # Updated fork of oh-my-zsh gitfast plugin.
 zplug "tevren/gitfast-zsh-plugin"
 
-# Gradle tab completion for bash and zsh
-zplug "gradle/gradle-completion"
-
 # Better completion for npm
 zplug "lukechilds/zsh-better-npm-completion"
 
 # Additional completion definitions for Zsh.
 zplug "zsh-users/zsh-completions"
 
-# Async for zsh, used by pure
-zplug "mafredri/zsh-async", defer:0
+# Load NVM plugin
+export NVM_LAZY_LOAD=true
+zplug "lukechilds/zsh-nvm"
 
 # Set the priority when loading
 # e.g., zsh-syntax-highlighting must be loaded
@@ -52,8 +45,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # Load theme file
 #zplug "agnoster/agnoster-zsh-theme", as:theme, use:agnoster.zsh-theme
 #zplug "bhilburn/powerlevel9k", as:theme, use:powerlevel9k.zsh-theme
-zplug "denysdovhan/spaceship-zsh-theme", as:theme
-#zplug "sindresorhus/pure", as:theme
+zplug "denysdovhan/spaceship-zsh-theme", as:theme, defer:2
 #zplug "themes/blinks", as:theme, from:oh-my-zsh
 
 # Install packages that have not been installed yet
@@ -158,9 +150,4 @@ if zplug check "denysdovhan/spaceship-zsh-theme"; then
     SPACESHIP_VI_MODE_SHOW=false
     SPACESHIP_VI_MODE_INSERT="[I]"
     SPACESHIP_VI_MODE_NORMAL="[N]"
-fi
-
-if zplug check "sindresorhus/pure"; then
-    PURE_GIT_PULL=0
-    PURE_GIT_UNTRACKED_DIRTY=0
 fi
